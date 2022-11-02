@@ -17,9 +17,9 @@ namespace peoplesList
 
         public void PrintPeopleInformations()
         {
-            Console.WriteLine("Name : " + _name);
-            Console.WriteLine("Job  : " + _job);
-            Console.WriteLine("Age  : " + _age);
+            Console.WriteLine($"Name : {_name}");
+            Console.WriteLine($"Job  : {_job}");
+            Console.WriteLine($"Age  : {_age}");
             Console.WriteLine("-----------------------------");
             Console.WriteLine();
         }
