@@ -8,7 +8,7 @@ namespace PeoplesList
     {
         public static void Main(string[] args)
         {
-            var peoples = CreateList(); 
+            ShowPeoplesInformations(CreateList()); 
             Console.ReadLine();
         }
 
@@ -19,6 +19,14 @@ namespace PeoplesList
             peoples.Add(new People("David", "Dev", 45));
             peoples.Add(new People("Grathy", "Secretary", 42));
             return peoples;     
+        }
+
+        public static void ShowPeoplesInformations(List<People> peoples)
+        {
+            foreach(var people in peoples)
+            {
+                people.PrintPeopleInformations();
+            }
         }
     }
 }
