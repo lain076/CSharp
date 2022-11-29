@@ -9,6 +9,7 @@ namespace PeoplesList
         public static void Main(string[] args)
         {
             ShowPeoplesInformations(CreateList()); 
+            People.ShowTotalOfPeoples();
             Console.ReadLine();
         }
 
