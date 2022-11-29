@@ -11,14 +11,14 @@ namespace peoplesList
         private readonly int _age;
         private readonly int _number;
 
-        public People(string name, string job, int age)
+        public People(string name,  int age, string job="No job specified")
         {
             _name = name;
             _job = job;
             _age = age;
             _number = _peopleNumber++;
         }
-
+        
         public void PrintPeopleInformations()
         {
             Console.WriteLine($"Name : {_name}");
