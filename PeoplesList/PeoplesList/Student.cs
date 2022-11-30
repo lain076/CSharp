@@ -6,20 +6,24 @@ namespace PeoplesList
     public class Student : People
     {
         private string _studyInformation;
-        public Student(string name, int age, string studyInformation = "No informations given") : base(name, age)
+        private People _headTeacher;
+        public Student(string name, int age, string studyInformation, People headTeacher = null) : base(name, age)
         {
             _studyInformation = studyInformation;
+            _headTeacher = headTeacher;
         }
         
         
 
-        public override void PrintPeopleInformations()
+        public void PrintPeopleStudyInformations()
         {
-            Console.WriteLine($"Name : {_name}");
-            Console.WriteLine($"Age  : {_age}");
+            PrintPeopleInformations();
+            Console.WriteLine("");
             Console.WriteLine($"Informations : {_studyInformation}");
-            Console.WriteLine($"Number  : {_number}");
             Console.WriteLine("-----------------------------");
+            Console.WriteLine("");
+            Console.WriteLine("Head teacher");
+            if (_headTeacher != null) _headTeacher.PrintPeopleJobInformations();
             Console.WriteLine();
         }
     }

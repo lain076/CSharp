@@ -6,12 +6,12 @@ namespace peoplesList
     {
         private static short _peopleNumber;
 
-        protected readonly string _name;
-        protected readonly string _job;
-        protected readonly int _age;
-        protected readonly int _number;
+        private readonly string _name;
+        private readonly string _job;
+        private readonly int _age;
+        private readonly int _number;
 
-        public People(string name, int age, string job = null)
+        public People(string name, int age, string job = "No job specified")
         {
             _name = name;
             _job = job;
@@ -19,22 +19,20 @@ namespace peoplesList
             _number = _peopleNumber++;
         }
 
-        public virtual void PrintPeopleInformations()
+        public void PrintPeopleJobInformations()
         {
-            Console.WriteLine($"Name : {_name}");
-            if(_job == null)
-            {
-                Console.WriteLine("Job  : No job specified");
-            }
-            else
-            {
-                Console.WriteLine($"Job  : {_job}");    
-            }
-            
-            Console.WriteLine($"Age  : {_age}");
-            Console.WriteLine($"Number  : {_number}");
+            PrintPeopleInformations();
+            Console.WriteLine("");
+            Console.WriteLine($"Job  : {_job}");
             Console.WriteLine("-----------------------------");
             Console.WriteLine();
+        }
+
+        protected void PrintPeopleInformations()
+        {
+            Console.WriteLine($"Name : {_name}");
+            Console.WriteLine($"Age  : {_age}");
+            Console.WriteLine($"Number  : {_number}");
         }
 
         public static void ShowTotalOfPeoples()
