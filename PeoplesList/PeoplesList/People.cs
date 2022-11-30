@@ -6,10 +6,10 @@ namespace peoplesList
     {
         private static short _peopleNumber;
 
-        private readonly string _name;
-        private readonly string _job;
-        private readonly int _age;
-        private readonly int _number;
+        protected readonly string _name;
+        protected readonly string _job;
+        protected readonly int _age;
+        protected readonly int _number;
 
         public People(string name, int age, string job = null)
         {
@@ -19,7 +19,7 @@ namespace peoplesList
             _number = _peopleNumber++;
         }
 
-        public void PrintPeopleInformations()
+        public virtual void PrintPeopleInformations()
         {
             Console.WriteLine($"Name : {_name}");
             if(_job == null)

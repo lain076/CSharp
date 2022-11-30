@@ -10,6 +10,11 @@ namespace PeoplesList
         {
             ShowPeoplesInformations(CreateList()); 
             People.ShowTotalOfPeoples();
+
+            Student student00 = new Student("Tutus", 15, "Engineer");
+            student00.PrintPeopleInformations();
+            
+            
             Console.ReadLine();
         }
 
