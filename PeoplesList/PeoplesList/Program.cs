@@ -9,28 +9,25 @@ namespace PeoplesList
         public static void Main(string[] args)
         {
             ShowPeoplesInformations(CreateList());
-            People.ShowTotalOfPeoples();
-
             CreateStudent();
-            
             CreateChild();
 
-            Console.ReadLine();
+            People.ShowTotalOfPeoples();
         }
 
         private static void CreateChild()
         {
-            Child child00 = new Child("Sophie",7,"CP");
-            child00.PrintChildInformations();
+            Child child00 = new Child("Sophie", 7, "CP");
+            child00.PrintInformations();
         }
-        
+
         private static void CreateStudent()
         {
             People headTeacher = new People("Jacques", 55, "Teacher");
             Student student00 = new Student("Tutus", 15, "Engineer");
-            
+
             student00.HeadTeacher = headTeacher;
-            student00.PrintPeopleStudyInformations();
+            student00.PrintInformations();
         }
 
         private static List<People> CreateList()
@@ -46,7 +43,7 @@ namespace PeoplesList
         {
             foreach (var people in peoples)
             {
-                people.PrintPeopleJobInformations();
+                people.PrintInformations();
             }
         }
     }

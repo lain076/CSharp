@@ -13,17 +13,22 @@ namespace PeoplesList
             _studyInformation = studyInformation;
         }
 
-
-        public void PrintPeopleStudyInformations()
+        public override void PrintInformations()
         {
-            PrintPeopleInformations();
-            Console.WriteLine("");
+            PrintPeopleInformations();  
             Console.WriteLine($"Informations : {_studyInformation}");
             Console.WriteLine("-----------------------------");
-            Console.WriteLine("");
-            Console.WriteLine("Head teacher");
-            if (HeadTeacher != null) HeadTeacher.PrintPeopleJobInformations();
-            Console.WriteLine();
+            
+            if (HeadTeacher != null)
+            {
+                Console.WriteLine("");
+                Console.WriteLine("Head teacher");
+                HeadTeacher.PrintInformations();
+                Console.WriteLine();
+            }
+                
+            
         }
+        
     }
 }

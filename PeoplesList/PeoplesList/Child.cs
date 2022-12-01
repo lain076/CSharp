@@ -12,7 +12,7 @@ namespace PeoplesList
             _schoolGrade = schoolGrade;
         }
 
-        public void PrintChildInformations()
+        public override void PrintInformations()
         {
             PrintPeopleInformations();
             Console.WriteLine("");
