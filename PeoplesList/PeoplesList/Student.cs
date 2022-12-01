@@ -6,14 +6,13 @@ namespace PeoplesList
     public class Student : People
     {
         private string _studyInformation;
-        private People _headTeacher;
-        public Student(string name, int age, string studyInformation, People headTeacher = null) : base(name, age)
+        public People HeadTeacher { get; set; }
+
+        public Student(string name, int age, string studyInformation) : base(name, age)
         {
             _studyInformation = studyInformation;
-            _headTeacher = headTeacher;
         }
-        
-        
+
 
         public void PrintPeopleStudyInformations()
         {
@@ -23,7 +22,7 @@ namespace PeoplesList
             Console.WriteLine("-----------------------------");
             Console.WriteLine("");
             Console.WriteLine("Head teacher");
-            if (_headTeacher != null) _headTeacher.PrintPeopleJobInformations();
+            if (HeadTeacher != null) HeadTeacher.PrintPeopleJobInformations();
             Console.WriteLine();
         }
     }

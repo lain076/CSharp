@@ -18,7 +18,8 @@ namespace PeoplesList
         private static void CreateStudent()
         {
             People headTeacher = new People("Jacques", 55, "Teacher");
-            Student student00 = new Student("Tutus", 15, "Engineer", headTeacher);
+            Student student00 = new Student("Tutus", 15, "Engineer");
+            student00.HeadTeacher = headTeacher;
             student00.PrintPeopleStudyInformations();
         }
 
