@@ -18,16 +18,15 @@ namespace PeoplesList
             PrintPeopleInformations();  
             Console.WriteLine($"Informations : {_studyInformation}");
             Console.WriteLine("-----------------------------");
-            
-            if (HeadTeacher != null)
-            {
-                Console.WriteLine("");
-                Console.WriteLine("Head teacher");
-                HeadTeacher.PrintInformations();
-                Console.WriteLine();
-            }
-                
-            
+            if (HeadTeacher != null) PrintHeadTeacher(HeadTeacher);
+        }
+
+        private void PrintHeadTeacher(People headTeacher)
+        {
+            Console.WriteLine("");
+            Console.WriteLine("Head teacher");
+            HeadTeacher.PrintInformations();
+            Console.WriteLine();
         }
         
     }
