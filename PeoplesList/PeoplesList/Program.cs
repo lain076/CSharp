@@ -10,15 +10,25 @@ namespace PeoplesList
         {
             ShowPeoplesInformations(CreateList());
             People.ShowTotalOfPeoples();
+
             CreateStudent();
+            
+            CreateChild();
 
             Console.ReadLine();
         }
 
+        private static void CreateChild()
+        {
+            Child child00 = new Child("Sophie",7,"CP");
+            child00.PrintChildInformations();
+        }
+        
         private static void CreateStudent()
         {
             People headTeacher = new People("Jacques", 55, "Teacher");
             Student student00 = new Student("Tutus", 15, "Engineer");
+            
             student00.HeadTeacher = headTeacher;
             student00.PrintPeopleStudyInformations();
         }
