@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using peoplesList;
 
 namespace PeoplesList
@@ -8,16 +9,26 @@ namespace PeoplesList
     {
         public static void Main(string[] args)
         {
-            ShowPeoplesInformations(CreateList());
-            CreateStudent();
-            CreateChild();
+            //LINK basic exemples
+            var peopleList = CreateList();
+            // ShowPeoplesInformations(peopleList);
 
-            People.ShowTotalOfPeoples();
+            //peopleList = peopleList.OrderBy(p => p.Name).ToList();
+            //ShowPeoplesInformations(peopleList);
+
+            //peopleList = peopleList.Where(p => p.Age > 40).ToList();
+            //ShowPeoplesInformations(peopleList);
+
+            // peopleList = peopleList.Where(p => p is Student).ToList();
+            // ShowPeoplesInformations(peopleList);
+
+            peopleList = peopleList.Where(p => (p.Name[0] == 'D') && (p.Age > 10) ).ToList();
+            ShowPeoplesInformations(peopleList);
         }
 
         private static void CreateChild()
         {
-            Child child00 = new Child("Sophie", 7, "CP",InitSchoolNotes(9,8.5f,7.4f));
+            Child child00 = new Child("Sophie", 7, "CP", InitSchoolNotes(9, 8.5f, 7.4f));
             child00.PrintInformations();
         }
 
@@ -30,6 +41,7 @@ namespace PeoplesList
             schoolNotes.Add("Science", science);
             return schoolNotes;
         }
+
         private static void CreateStudent()
         {
             People headTeacher = new People("Jacques", 55, "Teacher");
@@ -45,15 +57,20 @@ namespace PeoplesList
             peoples.Add(new People("Sam", 15, "Student"));
             peoples.Add(new People("David", 45, "Dev"));
             peoples.Add(new People("Grathy", 42));
+            peoples.Add(new Student("Tutus", 15, "Enginner"));
+            peoples.Add(new Child("Delphine", 8, "CP", null));
             return peoples;
         }
 
         private static void ShowPeoplesInformations(List<People> peoples)
         {
+            Console.WriteLine("");
             foreach (var people in peoples)
             {
                 people.PrintInformations();
             }
+
+            Console.WriteLine("-------------------------------------------");
         }
     }
 }

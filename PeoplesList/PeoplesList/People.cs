@@ -6,16 +6,16 @@ namespace peoplesList
     {
         private static short _peopleNumber;
 
-        private readonly string _name;
+        public string Name { get; private set; }
         private readonly string _job;
-        private readonly int _age;
+        public int Age { get; private set; }
         private readonly int _number;
 
         public People(string name, int age, string job = "No job specified")
         {
-            _name = name;
+            Name = name;
             _job = job;
-            _age = age;
+            Age = age;
             _number = _peopleNumber++;
         }
         public virtual void PrintInformations()
@@ -25,8 +25,8 @@ namespace peoplesList
         protected void PrintPeopleInformations()
         {
             Console.WriteLine($"People informations");
-            Console.WriteLine($"Name : {_name}");
-            Console.WriteLine($"Age  : {_age}");
+            Console.WriteLine($"Name : {Name}");
+            Console.WriteLine($"Age  : {Age}");
             Console.WriteLine($"Number  : {_number}");
             Console.WriteLine($"");
         }
