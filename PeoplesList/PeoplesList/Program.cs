@@ -17,10 +17,19 @@ namespace PeoplesList
 
         private static void CreateChild()
         {
-            Child child00 = new Child("Sophie", 7, "CP");
+            Child child00 = new Child("Sophie", 7, "CP",InitSchoolNotes(9,8.5f,7.4f));
             child00.PrintInformations();
         }
 
+        private static Dictionary<string, float> InitSchoolNotes(float math, float geo, float science)
+        {
+            Dictionary<string, float> schoolNotes;
+            schoolNotes = new Dictionary<string, float>();
+            schoolNotes.Add("Math", math);
+            schoolNotes.Add("Geo", geo);
+            schoolNotes.Add("Science", science);
+            return schoolNotes;
+        }
         private static void CreateStudent()
         {
             People headTeacher = new People("Jacques", 55, "Teacher");
