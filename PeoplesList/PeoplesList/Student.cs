@@ -7,12 +7,10 @@ namespace PeoplesList
     {
         private string _studyInformation;
         public People HeadTeacher { get; set; }
-
         public Student(string name, int age, string studyInformation) : base(name, age)
         {
             _studyInformation = studyInformation;
         }
-
         public override void PrintInformations()
         {
             PrintPeopleInformations();  
@@ -20,7 +18,6 @@ namespace PeoplesList
             Console.WriteLine("-----------------------------");
             if (HeadTeacher != null) PrintHeadTeacher(HeadTeacher);
         }
-
         private void PrintHeadTeacher(People headTeacher)
         {
             Console.WriteLine("");
@@ -28,6 +25,5 @@ namespace PeoplesList
             HeadTeacher.PrintInformations();
             Console.WriteLine();
         }
-        
     }
 }

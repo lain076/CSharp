@@ -5,12 +5,10 @@ namespace peoplesList
     public class People
     {
         private static short _peopleNumber;
-
         public string Name { get; private set; }
         private readonly string _job;
         public int Age { get; private set; }
         private readonly int _number;
-
         public People(string name, int age, string job = "No job specified")
         {
             Name = name;

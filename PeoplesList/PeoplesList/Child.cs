@@ -8,14 +8,12 @@ namespace PeoplesList
     {
         private string _schoolGrade;
         Dictionary<string, float> _schoolNotes;
-
         public Child(string name, int age, string schoolGrade, Dictionary<string, float> schoolNotes) : base(name, age,
             null)
         {
             _schoolGrade = schoolGrade;
             _schoolNotes = schoolNotes;
         }
-
         public override void PrintInformations()
         {
             PrintPeopleInformations();

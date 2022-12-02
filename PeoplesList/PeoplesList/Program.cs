@@ -9,29 +9,15 @@ namespace PeoplesList
     {
         public static void Main(string[] args)
         {
-            //LINK basic exemples
             var peopleList = CreateList();
-            // ShowPeoplesInformations(peopleList);
-
-            //peopleList = peopleList.OrderBy(p => p.Name).ToList();
-            //ShowPeoplesInformations(peopleList);
-
-            //peopleList = peopleList.Where(p => p.Age > 40).ToList();
-            //ShowPeoplesInformations(peopleList);
-
-            // peopleList = peopleList.Where(p => p is Student).ToList();
-            // ShowPeoplesInformations(peopleList);
-
-            peopleList = peopleList.Where(p => (p.Name[0] == 'D') && (p.Age > 10) ).ToList();
             ShowPeoplesInformations(peopleList);
+            People.ShowTotalOfPeoples();
         }
-
         private static void CreateChild()
         {
             Child child00 = new Child("Sophie", 7, "CP", InitSchoolNotes(9, 8.5f, 7.4f));
             child00.PrintInformations();
         }
-
         private static Dictionary<string, float> InitSchoolNotes(float math, float geo, float science)
         {
             Dictionary<string, float> schoolNotes;
@@ -41,7 +27,6 @@ namespace PeoplesList
             schoolNotes.Add("Science", science);
             return schoolNotes;
         }
-
         private static void CreateStudent()
         {
             People headTeacher = new People("Jacques", 55, "Teacher");
@@ -50,7 +35,6 @@ namespace PeoplesList
             student00.HeadTeacher = headTeacher;
             student00.PrintInformations();
         }
-
         private static List<People> CreateList()
         {
             var peoples = new List<People>();
@@ -61,7 +45,6 @@ namespace PeoplesList
             peoples.Add(new Child("Delphine", 8, "CP", null));
             return peoples;
         }
-
         private static void ShowPeoplesInformations(List<People> peoples)
         {
             Console.WriteLine("");
