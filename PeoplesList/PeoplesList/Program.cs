@@ -9,6 +9,10 @@ namespace PeoplesList
     {
         public static void Main(string[] args)
         {
+
+            var multiplicationTable = new MultiplicationTable(2);
+            multiplicationTable.showTable();
+            
             var peopleList = CreateList();
             ShowPeoplesInformations(peopleList);
             People.ShowTotalOfPeoples();
