@@ -21,11 +21,16 @@ public class Pizza
         if (_vegetarian) vegetarian = "(V)";
         Console.WriteLine("-------------------------------------------------------");
         Console.WriteLine($"Pizza { FormatFirstLetter(_name) } : { vegetarian } - { _price.ToString() } €");
-        Console.WriteLine($"Ingredients : { FormatFirstLetter(String.Join(", ",_ingredients)) }");
+        Console.WriteLine($"Ingredients : { String.Join(", ",FormatsIngredients(_ingredients)) }");
         Console.WriteLine("-------------------------------------------------------");
         Console.WriteLine("");
         Console.WriteLine("");
     }
+    
+     private List<string>  FormatsIngredients(List<string> ingredientsToFormat)
+     {
+         return ingredientsToFormat.Select(i => FormatFirstLetter(i)).ToList();
+     }
 
     private static string FormatFirstLetter(string words)
     {
