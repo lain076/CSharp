@@ -11,6 +11,9 @@ namespace PizzaProject // Note: actual namespace depends on the project name.
         {
             Console.OutputEncoding = Encoding.UTF8;
             CreatePizzas();
+
+            Pizzas = Pizzas.OrderByDescending(p => p.Price).ToList();
+            
             PrintPizzas();
         }
 
