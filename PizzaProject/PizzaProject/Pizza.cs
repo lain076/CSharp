@@ -2,9 +2,9 @@
 
 public class Pizza
 {
-    private bool _vegetarian;
-    private List<string> _ingredients;
+    public List<string> Ingredients { get; init; }
 
+    public bool Vegetarian { get; init; }
     public float Price { get; init; }
     public string Name { get; init; }
     
@@ -12,17 +12,17 @@ public class Pizza
     {
         Name = name;
         Price = price;
-        _vegetarian = vegetarian;
-        _ingredients = ingredients;
+        Vegetarian = vegetarian;
+        Ingredients = ingredients;
     }
 
     public void PrintPizzaInfo()
     {
         var vegetarian = string.Empty;
-        if (_vegetarian) vegetarian = "(V)";
+        if (Vegetarian) vegetarian = "(V)";
         Console.WriteLine("-------------------------------------------------------");
         Console.WriteLine($"Pizza {FormatFirstLetter(Name)} : {vegetarian} - {Price.ToString()} €");
-        Console.WriteLine($"Ingredients : {String.Join(", ", FormatsIngredients(_ingredients))}");
+        Console.WriteLine($"Ingredients : {String.Join(", ", FormatsIngredients(Ingredients))}");
         Console.WriteLine("-------------------------------------------------------");
         Console.WriteLine("");
         Console.WriteLine("");

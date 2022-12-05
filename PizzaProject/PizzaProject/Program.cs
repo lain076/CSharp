@@ -13,11 +13,11 @@ namespace PizzaProject // Note: actual namespace depends on the project name.
         {
             Console.OutputEncoding = Encoding.UTF8;
             CreatePizzas();
-            FindMostAndLessExpensivePizzas();
-            Pizzas = Pizzas.OrderBy(p => p.Price).ToList();
-
+            //FindMostAndLessExpensivePizzas();
+            //Pizzas = Pizzas.OrderBy(p => p.Price).ToList();
+            Pizzas = Pizzas.Where(p => p.Ingredients.Where(i => i.ToLower().Contains("tomate")).ToList().Count()>0).ToList();
             PrintPizzas();
-            PrintMostAndLessExpensivePizzas();
+            //PrintMostAndLessExpensivePizzas();
         }
 
         private static void CreatePizzas()
