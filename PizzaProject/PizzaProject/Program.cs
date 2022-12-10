@@ -15,21 +15,21 @@ namespace PizzaProject // Note: actual namespace depends on the project name.
             CreatePizzas();
             //FindMostAndLessExpensivePizzas();
             //Pizzas = Pizzas.OrderBy(p => p.Price).ToList();
-            Pizzas = Pizzas.Where(p => p.Ingredients.Where(i => i.ToLower().Contains("tomate")).ToList().Count()>0).ToList();
+            //Pizzas = Pizzas.Where(p => p.Ingredients.Where(i => i.ToLower().Contains("tomate")).ToList().Count()>0).ToList();
             PrintPizzas();
             //PrintMostAndLessExpensivePizzas();
         }
 
         private static void CreatePizzas()
         {
-            Pizzas.Add(new Pizza("4 fromages", 11.5F,
-                new List<string>() {"Conté", "gruyère", "fromfrom", "parmesant"}));
-            Pizzas.Add(new Pizza("Champignons", 9.5F, new List<string>() {"Fungis", "champis", "amanite", "tomates"},
-                true));
-            Pizzas.Add(new Pizza("Bolognèse", 10F,
-                new List<string>() {"tomates", "poivrons", "haché boeuf", "oignon"}));
+            Pizzas.Add(new Pizza("4 fromages", 11.5F, new List<string>() {"Conté", "gruyère", "fromfrom", "parmesant"}));
+            Pizzas.Add(new Pizza("Champignons", 9.5F, new List<string>() {"Fungis", "champis", "amanite", "tomates"}, true));
+            Pizzas.Add(new Pizza("Bolognèse", 10F, new List<string>() {"tomates", "poivrons", "haché boeuf", "oignon"}));
             Pizzas.Add(new Pizza("4 saisons", 15F, new List<string>() {"Fungis", "oignon", "courgette", "saumon"}));
             Pizzas.Add(new Pizza("Arabiata", 9F, new List<string>() {"arabia", "ail", "saucisson", "Tomates"}, true));
+            Pizzas.Add(new PersonalizedPizza());
+            Pizzas.Add(new PersonalizedPizza());
+            //Pizzas.Add(new PersonalizedPizza());
         }
 
         private static void PrintPizzas()
